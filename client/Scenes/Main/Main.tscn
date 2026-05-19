@@ -1,0 +1,46 @@
+[gd_scene load_steps=12 format=3 uid="uid://main001"]
+
+[ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_main"]
+[ext_resource type="Script" path="res://Systems/PhaseManager.gd" id="2_phase"]
+[ext_resource type="Script" path="res://Systems/WaveSystem.gd" id="3_wave"]
+[ext_resource type="Script" path="res://Systems/SpawnSystem.gd" id="4_spawn"]
+[ext_resource type="Script" path="res://Systems/BuildSystem.gd" id="5_build"]
+[ext_resource type="Script" path="res://Systems/ResourceSystem.gd" id="6_resource"]
+[ext_resource type="Script" path="res://Systems/LootSystem.gd" id="7_loot"]
+[ext_resource type="Script" path="res://Systems/SaveSystem.gd" id="8_save"]
+[ext_resource type="Script" path="res://Systems/FieldEventManager.gd" id="9_field"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/HUD.tscn" id="10_hud"]
+[ext_resource type="PackedScene" path="res://Scenes/World/Eldrath.tscn" id="11_world"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_main")
+
+[node name="Systems" type="Node" parent="."]
+
+[node name="PhaseManager" type="Node" parent="Systems"]
+script = ExtResource("2_phase")
+
+[node name="WaveSystem" type="Node" parent="Systems"]
+script = ExtResource("3_wave")
+
+[node name="SpawnSystem" type="Node" parent="Systems"]
+script = ExtResource("4_spawn")
+
+[node name="BuildSystem" type="Node" parent="Systems"]
+script = ExtResource("5_build")
+
+[node name="ResourceSystem" type="Node" parent="Systems"]
+script = ExtResource("6_resource")
+
+[node name="LootSystem" type="Node" parent="Systems"]
+script = ExtResource("7_loot")
+
+[node name="SaveSystem" type="Node" parent="Systems"]
+script = ExtResource("8_save")
+
+[node name="FieldEventManager" type="Node" parent="Systems"]
+script = ExtResource("9_field")
+
+[node name="PlayersContainer" type="Node3D" parent="."]
+
+[node name="World" type="Node3D" parent="."]

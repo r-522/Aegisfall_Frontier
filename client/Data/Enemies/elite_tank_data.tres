@@ -1,0 +1,31 @@
+[gd_resource type="EnemyData" format=3 uid="uid://elitetankdata"]
+
+[resource]
+enemy_id = &"elite_tank"
+display_name = "Elite Tank"
+enemy_type = 9
+max_health = 900.0
+defense = 20.0
+move_speed = 1.8
+attack_damage = 35.0
+attack_range = 1.5
+attack_cooldown = 2.0
+xp_reward = 40
+gold_reward = 20
+build_material_reward = 2.0
+loot_weight = 2.0
+target_priority = 0
+movement_type = 0
+detection_range = 12.0
+can_attack_structures = false
+structure_damage_multiplier = 1.0
+flee_health_threshold = 0.0
+is_elite = true
+is_boss = false
+can_fly = false
+fly_height = 3.0
+can_summon_minions = false
+minion_type_id = &""
+minion_count = 3
+on_death_effect_id = &""
+on_hit_effect_id = &""

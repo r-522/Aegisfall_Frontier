@@ -1,0 +1,29 @@
+[gd_resource type="TowerData" format=3 uid="uid://lightningobeliskdata"]
+
+[resource]
+tower_id = &"lightning_obelisk"
+display_name = "Lightning Obelisk"
+description = "雷撃を放つ魔法石柱。チェインライトニングで複数の敵を同時に攻撃する。"
+category = 1
+attack_behavior = 1
+build_cost = 200
+upgrade_cost = 300
+sell_value = 140
+max_health = 300.0
+attack_damage = 55.0
+attack_range = 11.0
+attack_cooldown = 2.0
+aoe_radius = 0.0
+projectile_speed = 40.0
+piercing = false
+buff_type = &""
+buff_value = 0.0
+buff_radius = 0.0
+buff_tick_rate = 0.0
+heal_per_tick = 0.0
+mana_restore_per_tick = 0.0
+special_effect_id = &"chain_lightning"
+special_effect_radius = 4.0
+slow_multiplier = 1.0
+pull_force = 0.0
+preview_color = Color(0.3, 0.6, 1.0, 0.5)

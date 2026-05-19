@@ -1,0 +1,24 @@
+[gd_resource type="CharacterData" format=3 uid="uid://rangerdata"]
+
+[resource]
+character_id = &"ranger"
+display_name = "Ranger"
+description = "弓と罠を使う敏捷な狩人。索敵と遠距離DPSが得意。"
+class_category = 3
+max_health = 185.0
+base_defense = 8.0
+max_mana = 120.0
+mana_regen_rate = 7.0
+move_speed = 6.0
+run_speed = 9.0
+dash_speed = 20.0
+dash_duration = 0.16
+dash_cooldown = 1.0
+jump_force = 8.5
+base_attack_damage = 40.0
+base_heavy_attack_damage = 80.0
+attack_speed = 2.0
+attack_range = 20.0
+crit_chance = 0.15
+crit_multiplier = 2.2
+preferred_tower_category = 3

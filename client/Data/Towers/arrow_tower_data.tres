@@ -1,0 +1,29 @@
+[gd_resource type="TowerData" format=3 uid="uid://arrowtowerdata"]
+
+[resource]
+tower_id = &"arrow_tower"
+display_name = "Arrow Tower"
+description = "矢を放つ基本的な攻撃塔。コストパフォーマンスに優れた万能タワー。"
+category = 1
+attack_behavior = 1
+build_cost = 100
+upgrade_cost = 150
+sell_value = 70
+max_health = 350.0
+attack_damage = 45.0
+attack_range = 12.0
+attack_cooldown = 1.2
+aoe_radius = 0.0
+projectile_speed = 30.0
+piercing = false
+buff_type = &""
+buff_value = 0.0
+buff_radius = 0.0
+buff_tick_rate = 0.0
+heal_per_tick = 0.0
+mana_restore_per_tick = 0.0
+special_effect_id = &""
+special_effect_radius = 0.0
+slow_multiplier = 1.0
+pull_force = 0.0
+preview_color = Color(0.2, 0.6, 0.2, 0.5)

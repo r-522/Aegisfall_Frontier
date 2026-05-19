@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://arrow001"]
+
+[ext_resource type="PackedScene" path="res://Scenes/Projectiles/ProjectileBase.tscn" id="1_base"]
+[ext_resource type="Script" path="res://Scenes/Projectiles/Arrow.gd" id="2_script"]
+
+[sub_resource type="CapsuleMesh" id="Mesh_arrow"]
+radius = 0.04
+height = 0.6
+
+[node name="Arrow" instance=ExtResource("1_base")]
+script = ExtResource("2_script")
+
+[node name="MeshInstance3D" parent="."]
+mesh = SubResource("Mesh_arrow")

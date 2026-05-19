@@ -1,0 +1,29 @@
+[gd_resource type="TowerData" format=3 uid="uid://spikebarricadedata"]
+
+[resource]
+tower_id = &"spike_barricade"
+display_name = "Spike Barricade"
+description = "トゲが生えた障壁。近づく敵に継続ダメージを与える。"
+category = 0
+attack_behavior = 2
+build_cost = 60
+upgrade_cost = 90
+sell_value = 42
+max_health = 400.0
+attack_damage = 15.0
+attack_range = 1.5
+attack_cooldown = 0.5
+aoe_radius = 1.5
+projectile_speed = 0.0
+piercing = false
+buff_type = &""
+buff_value = 0.0
+buff_radius = 0.0
+buff_tick_rate = 0.0
+heal_per_tick = 0.0
+mana_restore_per_tick = 0.0
+special_effect_id = &""
+special_effect_radius = 0.0
+slow_multiplier = 1.0
+pull_force = 0.0
+preview_color = Color(0.6, 0.3, 0.1, 0.5)

@@ -1,0 +1,29 @@
+[gd_resource type="TowerData" format=3 uid="uid://ballistadata"]
+
+[resource]
+tower_id = &"ballista"
+display_name = "Ballista"
+description = "超長射程の大型弩砲。貫通する巨大矢で敵の縦列を一掃する高威力タワー。"
+category = 1
+attack_behavior = 1
+build_cost = 220
+upgrade_cost = 330
+sell_value = 154
+max_health = 400.0
+attack_damage = 120.0
+attack_range = 18.0
+attack_cooldown = 2.5
+aoe_radius = 0.0
+projectile_speed = 50.0
+piercing = true
+buff_type = &""
+buff_value = 0.0
+buff_radius = 0.0
+buff_tick_rate = 0.0
+heal_per_tick = 0.0
+mana_restore_per_tick = 0.0
+special_effect_id = &""
+special_effect_radius = 0.0
+slow_multiplier = 1.0
+pull_force = 0.0
+preview_color = Color(0.5, 0.4, 0.2, 0.5)

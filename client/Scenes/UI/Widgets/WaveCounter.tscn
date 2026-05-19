@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://wavecounter001"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Widgets/WaveCounter.gd" id="1_script"]
+
+[node name="WaveCounter" type="VBoxContainer"]
+script = ExtResource("1_script")
+custom_minimum_size = Vector2(200, 50)
+
+[node name="WaveLabel" type="Label" parent="."]
+layout_mode = 2
+text = "ウェーブ 0 / 0"
+horizontal_alignment = 1
+
+[node name="EnemyProgress" type="ProgressBar" parent="."]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 16)
+show_percentage = false
+
+[node name="EnemyLabel" type="Label" parent="."]
+layout_mode = 2
+text = "敵: 0"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 11

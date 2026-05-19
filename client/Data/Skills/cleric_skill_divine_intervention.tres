@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://cleric_skill1"]
+
+[ext_resource type="Script" path="res://Data/Skills/SkillData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+skill_id = &"divine_intervention"
+display_name = "ディバインインターベンション"
+description = "全プレイヤーを蘇生し一時無敵付与"
+skill_type = 2
+target_type = 4
+mana_cost = 80.0
+cooldown = 90.0
+cast_time = 1.0
+range = 0.0
+area_radius = 30.0
+base_damage = 0.0
+base_heal = 100.0
+buff_duration = 5.0
+effect_id = &"invincible"

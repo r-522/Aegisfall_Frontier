@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ruinedplains001"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_terrain"]
+size = Vector3(100, 0.5, 100)
+
+[sub_resource type="StandardMaterial3D" id="Mat_plains"]
+albedo_color = Color(0.22, 0.18, 0.12, 1)
+roughness = 0.95
+
+[node name="RuinedPlains" type="Node3D"]
+
+[node name="Terrain" type="StaticBody3D" parent="."]
+collision_layer = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Terrain"]
+mesh = SubResource("BoxMesh_terrain")
+surface_material_override/0 = SubResource("Mat_plains")
+
+[node name="AmbientLight" type="OmniLight3D" parent="."]
+position = Vector3(0, 15, 0)
+light_color = Color(0.5, 0.45, 0.35, 1)
+light_energy = 0.8
+omni_range = 80.0

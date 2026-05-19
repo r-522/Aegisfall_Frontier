@@ -1,0 +1,29 @@
+[gd_resource type="TowerData" format=3 uid="uid://stonewalldata"]
+
+[resource]
+tower_id = &"stone_wall"
+display_name = "Stone Wall"
+description = "頑丈な石の壁。攻撃能力はないが高い耐久力で敵の侵攻を阻む。"
+category = 0
+attack_behavior = 0
+build_cost = 50
+upgrade_cost = 75
+sell_value = 35
+max_health = 1000.0
+attack_damage = 0.0
+attack_range = 0.0
+attack_cooldown = 0.0
+aoe_radius = 0.0
+projectile_speed = 0.0
+piercing = false
+buff_type = &""
+buff_value = 0.0
+buff_radius = 0.0
+buff_tick_rate = 0.0
+heal_per_tick = 0.0
+mana_restore_per_tick = 0.0
+special_effect_id = &""
+special_effect_radius = 0.0
+slow_multiplier = 1.0
+pull_force = 0.0
+preview_color = Color(0.5, 0.5, 0.5, 0.5)

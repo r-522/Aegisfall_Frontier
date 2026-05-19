@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ancientaqueduct001"]
+
+[sub_resource type="StandardMaterial3D" id="Mat_stone"]
+albedo_color = Color(0.55, 0.52, 0.45, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="BoxMesh_terrain"]
+size = Vector3(100, 0.5, 100)
+
+[node name="AncientAqueduct" type="Node3D"]
+
+[node name="Terrain" type="StaticBody3D" parent="."]
+collision_layer = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Terrain"]
+mesh = SubResource("BoxMesh_terrain")
+surface_material_override/0 = SubResource("Mat_stone")
+
+[node name="AmbientLight" type="DirectionalLight3D" parent="."]
+light_color = Color(0.85, 0.82, 0.7, 1)
+light_energy = 0.7
+rotation_degrees = Vector3(-45, 30, 0)

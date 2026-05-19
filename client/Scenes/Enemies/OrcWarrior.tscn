@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://orcwarrior001"]
+
+[ext_resource type="PackedScene" path="res://Scenes/Enemies/EnemyBase.tscn" id="1_base"]
+[ext_resource type="Script" path="res://Scenes/Enemies/OrcWarrior.gd" id="2_script"]
+[ext_resource type="Resource" path="res://Data/Enemies/orc_warrior_data.tres" id="3_data"]
+
+[node name="OrcWarrior" instance=ExtResource("1_base")]
+script = ExtResource("2_script")
+enemy_data = ExtResource("3_data")

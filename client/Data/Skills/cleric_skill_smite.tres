@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://cleric_skill3"]
+
+[ext_resource type="Script" path="res://Data/Skills/SkillData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+skill_id = &"smite"
+display_name = "スマイト"
+description = "聖なる光で敵1体に大ダメージ"
+skill_type = 0
+target_type = 1
+mana_cost = 30.0
+cooldown = 10.0
+cast_time = 0.3
+range = 12.0
+area_radius = 0.0
+base_damage = 80.0
+base_heal = 0.0
+buff_duration = 0.0
+effect_id = &""

@@ -1,0 +1,24 @@
+[gd_resource type="CharacterData" format=3 uid="uid://clericdata"]
+
+[resource]
+character_id = &"cleric"
+display_name = "Cleric"
+description = "神聖魔法で仲間を支援する聖職者。回復と強化が得意。"
+class_category = 2
+max_health = 200.0
+base_defense = 12.0
+max_mana = 150.0
+mana_regen_rate = 12.0
+move_speed = 4.8
+run_speed = 7.0
+dash_speed = 15.0
+dash_duration = 0.18
+dash_cooldown = 1.4
+jump_force = 7.0
+base_attack_damage = 25.0
+base_heavy_attack_damage = 55.0
+attack_speed = 1.3
+attack_range = 2.0
+crit_chance = 0.05
+crit_multiplier = 1.8
+preferred_tower_category = 2

@@ -1,0 +1,83 @@
+[gd_scene load_steps=2 format=3 uid="uid://mainmenu001"]
+
+[ext_resource type="Script" path="res://Scenes/UI/MainMenu.gd" id="1_script"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.05, 0.1, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(350, 0)
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="CenterContainer/VBox"]
+layout_mode = 2
+text = "Aegisfall Frontier"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 36
+
+[node name="Subtitle" type="Label" parent="CenterContainer/VBox"]
+layout_mode = 2
+text = "Frontier Legion — Advance on Eldrath"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 14
+
+[node name="Separator" type="HSeparator" parent="CenterContainer/VBox"]
+layout_mode = 2
+
+[node name="HostButton" type="Button" parent="CenterContainer/VBox"]
+layout_mode = 2
+text = "ホスト (Host Game)"
+
+[node name="JoinButton" type="Button" parent="CenterContainer/VBox"]
+layout_mode = 2
+text = "参加 (Join Game)"
+
+[node name="SoloButton" type="Button" parent="CenterContainer/VBox"]
+layout_mode = 2
+text = "ソロプレイ (Solo)"
+
+[node name="IPContainer" type="HBoxContainer" parent="CenterContainer/VBox"]
+layout_mode = 2
+visible = false
+
+[node name="IPLabel" type="Label" parent="CenterContainer/VBox/IPContainer"]
+layout_mode = 2
+text = "IP:"
+
+[node name="IPInput" type="LineEdit" parent="CenterContainer/VBox/IPContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "127.0.0.1"
+text = "127.0.0.1"
+
+[node name="ConnectButton" type="Button" parent="CenterContainer/VBox"]
+layout_mode = 2
+text = "接続"
+visible = false
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBox"]
+layout_mode = 2
+text = "終了"
+
+[node name="StatusLabel" type="Label" parent="CenterContainer/VBox"]
+layout_mode = 2
+text = ""
+horizontal_alignment = 1
+modulate = Color(1, 0.5, 0.5, 1)

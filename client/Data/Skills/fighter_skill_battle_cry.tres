@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://fighter_skill3"]
+
+[ext_resource type="Script" path="res://Data/Skills/SkillData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+skill_id = &"battle_cry"
+display_name = "バトルクライ"
+description = "ダメージバフ付与"
+skill_type = 0
+target_type = 0
+mana_cost = 25.0
+cooldown = 20.0
+cast_time = 0.0
+range = 0.0
+area_radius = 0.0
+base_damage = 0.0
+base_heal = 0.0
+buff_duration = 10.0
+effect_id = &"damage_up"

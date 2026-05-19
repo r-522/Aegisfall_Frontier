@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://waveset01"]
+
+[ext_resource type="Script" path="res://Data/Waves/WaveData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+wave_number = 1
+display_name = "ウェーブ 1: 前衛部隊"
+reward_gold = 150
+reward_xp = 200
+spawn_entries = []

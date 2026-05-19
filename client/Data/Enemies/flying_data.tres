@@ -1,0 +1,31 @@
+[gd_resource type="EnemyData" format=3 uid="uid://flyingdata"]
+
+[resource]
+enemy_id = &"flying"
+display_name = "Flying"
+enemy_type = 3
+max_health = 120.0
+defense = 0.0
+move_speed = 4.0
+attack_damage = 12.0
+attack_range = 1.5
+attack_cooldown = 1.5
+xp_reward = 8
+gold_reward = 4
+build_material_reward = 0.5
+loot_weight = 0.8
+target_priority = 0
+movement_type = 1
+detection_range = 14.0
+can_attack_structures = false
+structure_damage_multiplier = 1.0
+flee_health_threshold = 0.0
+is_elite = false
+is_boss = false
+can_fly = true
+fly_height = 3.5
+can_summon_minions = false
+minion_type_id = &""
+minion_count = 3
+on_death_effect_id = &""
+on_hit_effect_id = &""

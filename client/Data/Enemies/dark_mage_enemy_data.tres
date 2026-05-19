@@ -1,0 +1,31 @@
+[gd_resource type="EnemyData" format=3 uid="uid://darkmageenemydata"]
+
+[resource]
+enemy_id = &"dark_mage"
+display_name = "Dark Mage"
+enemy_type = 7
+max_health = 180.0
+defense = 0.0
+move_speed = 2.5
+attack_damage = 35.0
+attack_range = 12.0
+attack_cooldown = 2.0
+xp_reward = 25
+gold_reward = 12
+build_material_reward = 1.0
+loot_weight = 1.3
+target_priority = 0
+movement_type = 0
+detection_range = 14.0
+can_attack_structures = false
+structure_damage_multiplier = 1.0
+flee_health_threshold = 0.0
+is_elite = false
+is_boss = false
+can_fly = false
+fly_height = 3.0
+can_summon_minions = true
+minion_type_id = &"swarm"
+minion_count = 2
+on_death_effect_id = &""
+on_hit_effect_id = &""

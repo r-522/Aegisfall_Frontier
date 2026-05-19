@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://cleric_skill2"]
+
+[ext_resource type="Script" path="res://Data/Skills/SkillData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+skill_id = &"holy_barrier"
+display_name = "ホーリーバリア"
+description = "周囲の味方に一時無敵付与"
+skill_type = 0
+target_type = 4
+mana_cost = 45.0
+cooldown = 30.0
+cast_time = 0.5
+range = 0.0
+area_radius = 10.0
+base_damage = 0.0
+base_heal = 0.0
+buff_duration = 4.0
+effect_id = &"invincible"
