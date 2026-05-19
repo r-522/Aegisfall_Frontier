@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://sage_data_001"]
+
+[ext_resource type="Script" path="res://Data/Characters/CharacterData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+character_id = &"sage"
+display_name = "Sage"
+class_category = 1
+max_health = 220.0
+base_defense = 8.0
+max_mana = 240.0
+mana_regen_rate = 13.0
+move_speed = 4.5
+run_speed = 7.0
+dash_speed = 16.0
+dash_duration = 0.18
+dash_cooldown = 1.2
+jump_force = 7.5
+base_attack_damage = 40.0
+base_heavy_attack_damage = 60.0
+attack_speed = 0.9
+attack_range = 12.0
+crit_chance = 0.1
+crit_multiplier = 1.5

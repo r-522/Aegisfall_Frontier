@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://bishop_data_001"]
+
+[ext_resource type="Script" path="res://Data/Characters/CharacterData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+character_id = &"bishop"
+display_name = "Bishop"
+class_category = 2
+max_health = 225.0
+base_defense = 9.0
+max_mana = 220.0
+mana_regen_rate = 13.0
+move_speed = 4.3
+run_speed = 6.8
+dash_speed = 14.0
+dash_duration = 0.18
+dash_cooldown = 1.4
+jump_force = 7.0
+base_attack_damage = 28.0
+base_heavy_attack_damage = 45.0
+attack_speed = 0.85
+attack_range = 11.0
+crit_chance = 0.08
+crit_multiplier = 1.5

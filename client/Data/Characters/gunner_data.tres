@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://gunner_data_001"]
+
+[ext_resource type="Script" path="res://Data/Characters/CharacterData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+character_id = &"gunner"
+display_name = "Gunner"
+class_category = 4
+max_health = 245.0
+base_defense = 10.0
+max_mana = 140.0
+mana_regen_rate = 7.0
+move_speed = 5.2
+run_speed = 8.5
+dash_speed = 20.0
+dash_duration = 0.18
+dash_cooldown = 1.0
+jump_force = 8.0
+base_attack_damage = 50.0
+base_heavy_attack_damage = 80.0
+attack_speed = 1.6
+attack_range = 16.0
+crit_chance = 0.16
+crit_multiplier = 1.8

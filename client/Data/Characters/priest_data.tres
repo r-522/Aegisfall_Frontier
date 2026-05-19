@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://priest_data_001"]
+
+[ext_resource type="Script" path="res://Data/Characters/CharacterData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+character_id = &"priest"
+display_name = "Priest"
+class_category = 2
+max_health = 230.0
+base_defense = 10.0
+max_mana = 200.0
+mana_regen_rate = 12.0
+move_speed = 4.5
+run_speed = 7.0
+dash_speed = 15.0
+dash_duration = 0.18
+dash_cooldown = 1.3
+jump_force = 7.0
+base_attack_damage = 25.0
+base_heavy_attack_damage = 40.0
+attack_speed = 0.9
+attack_range = 10.0
+crit_chance = 0.08
+crit_multiplier = 1.5

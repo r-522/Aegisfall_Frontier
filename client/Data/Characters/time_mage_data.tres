@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://time_mage_data_001"]
+
+[ext_resource type="Script" path="res://Data/Characters/CharacterData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+character_id = &"time_mage"
+display_name = "Time Mage"
+class_category = 1
+max_health = 200.0
+base_defense = 6.0
+max_mana = 200.0
+mana_regen_rate = 11.0
+move_speed = 4.5
+run_speed = 7.0
+dash_speed = 16.0
+dash_duration = 0.18
+dash_cooldown = 1.2
+jump_force = 7.5
+base_attack_damage = 45.0
+base_heavy_attack_damage = 70.0
+attack_speed = 0.85
+attack_range = 12.0
+crit_chance = 0.1
+crit_multiplier = 1.6
