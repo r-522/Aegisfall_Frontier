@@ -1,0 +1,29 @@
+[gd_resource type="TowerData" format=3 uid="uid://trapminedata"]
+
+[resource]
+tower_id = &"trap_mine"
+display_name = "Trap Mine"
+description = "地面に設置された爆発地雷。踏んだ敵を広範囲の爆発で吹き飛ばす。"
+category = 3
+attack_behavior = 4
+build_cost = 40
+upgrade_cost = 60
+sell_value = 28
+max_health = 100.0
+attack_damage = 150.0
+attack_range = 0.5
+attack_cooldown = 0.1
+aoe_radius = 0.0
+projectile_speed = 0.0
+piercing = false
+buff_type = &""
+buff_value = 0.0
+buff_radius = 0.0
+buff_tick_rate = 0.0
+heal_per_tick = 0.0
+mana_restore_per_tick = 0.0
+special_effect_id = &"explosion"
+special_effect_radius = 4.0
+slow_multiplier = 1.0
+pull_force = 0.0
+preview_color = Color(0.8, 0.2, 0.1, 0.5)

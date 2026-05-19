@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=3 uid="uid://eldrath001"]
+
+[ext_resource type="Script" path="res://Scenes/World/BuildGrid.gd" id="1_buildgrid"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ground"]
+size = Vector3(200, 1, 200)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ground"]
+size = Vector3(200, 0.5, 200)
+
+[sub_resource type="StandardMaterial3D" id="Mat_ground"]
+albedo_color = Color(0.18, 0.15, 0.12, 1)
+roughness = 0.9
+metallic = 0.0
+
+[sub_resource type="Sky" id="Sky_eldrath"]
+
+[sub_resource type="Environment" id="Env_eldrath"]
+background_mode = 2
+sky = SubResource("Sky_eldrath")
+ambient_light_source = 2
+ambient_light_color = Color(0.15, 0.12, 0.2, 1)
+ambient_light_energy = 0.3
+fog_enabled = true
+fog_density = 0.008
+fog_sky_affect = 0.5
+glow_enabled = true
+glow_bloom = 0.05
+ssao_enabled = true
+
+[node name="Eldrath" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env_eldrath")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, -0.35, 0.354, 0, 0.71, 0.704, -0.5, -0.606, 0.612, 0, 20, 0)
+light_color = Color(0.6, 0.65, 0.9, 1)
+light_energy = 0.5
+shadow_enabled = true
+directional_shadow_mode = 2
+
+[node name="MoonLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866, -0.1, 0.5, 0, 0.98, 0.19, -0.5, 0.17, -0.85, 0, 15, 0)
+light_color = Color(0.3, 0.35, 0.6, 1)
+light_energy = 0.2
+
+[node name="Ground" type="StaticBody3D" parent="."]
+collision_layer = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_ground")
+position = Vector3(0, -0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_ground")
+surface_material_override/0 = SubResource("Mat_ground")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+
+[node name="BuildGrid" type="Node3D" parent="."]
+script = ExtResource("1_buildgrid")
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="SpawnPoint_Enemy_00" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0.5, -40)
+
+[node name="SpawnPoint_Enemy_01" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0.5, 40)
+
+[node name="SpawnPoint_Enemy_02" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0.5, -70)
+
+[node name="SpawnPoint_Enemy_03" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0.5, 70)
+
+[node name="SpawnPoint_Enemy_04" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0.5, 0)
+
+[node name="PlayerSpawnPoints" type="Node3D" parent="."]
+
+[node name="PlayerSpawn_00" type="Marker3D" parent="PlayerSpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 0)
+
+[node name="PlayerSpawn_01" type="Marker3D" parent="PlayerSpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.5, 4)
+
+[node name="PlayerSpawn_02" type="Marker3D" parent="PlayerSpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.5, -4)
+
+[node name="PlayerSpawn_03" type="Marker3D" parent="PlayerSpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, -6)
+
+[node name="SupplyLines" type="Node3D" parent="."]
+
+[node name="BaseDefensePoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="FogOfWar" type="Node3D" parent="."]

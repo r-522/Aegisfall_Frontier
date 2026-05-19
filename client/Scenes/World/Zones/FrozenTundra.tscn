@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://frozentundra001"]
+
+[sub_resource type="StandardMaterial3D" id="Mat_frozen"]
+albedo_color = Color(0.75, 0.85, 0.95, 1)
+roughness = 0.3
+metallic = 0.1
+
+[sub_resource type="BoxMesh" id="BoxMesh_terrain"]
+size = Vector3(100, 0.5, 100)
+
+[node name="FrozenTundra" type="Node3D"]
+
+[node name="Terrain" type="StaticBody3D" parent="."]
+collision_layer = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Terrain"]
+mesh = SubResource("BoxMesh_terrain")
+surface_material_override/0 = SubResource("Mat_frozen")
+
+[node name="ArcticLight" type="DirectionalLight3D" parent="."]
+light_color = Color(0.7, 0.8, 1.0, 1)
+light_energy = 0.6

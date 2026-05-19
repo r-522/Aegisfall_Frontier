@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cursedforest001"]
+
+[sub_resource type="StandardMaterial3D" id="Mat_forest"]
+albedo_color = Color(0.1, 0.18, 0.08, 1)
+roughness = 0.98
+
+[sub_resource type="BoxMesh" id="BoxMesh_terrain"]
+size = Vector3(100, 0.5, 100)
+
+[node name="CursedForest" type="Node3D"]
+
+[node name="Terrain" type="StaticBody3D" parent="."]
+collision_layer = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Terrain"]
+mesh = SubResource("BoxMesh_terrain")
+surface_material_override/0 = SubResource("Mat_forest")
+
+[node name="FogEmitter" type="Node3D" parent="."]

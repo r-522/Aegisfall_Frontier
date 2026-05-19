@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://samurai_data_001"]
+
+[ext_resource type="Script" path="res://Data/Characters/CharacterData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+character_id = &"samurai"
+display_name = "Samurai"
+class_category = 0
+max_health = 290.0
+base_defense = 15.0
+max_mana = 90.0
+mana_regen_rate = 5.0
+move_speed = 5.5
+run_speed = 9.0
+dash_speed = 22.0
+dash_duration = 0.18
+dash_cooldown = 1.0
+jump_force = 8.5
+base_attack_damage = 55.0
+base_heavy_attack_damage = 90.0
+attack_speed = 1.3
+attack_range = 2.3
+crit_chance = 0.22
+crit_multiplier = 2.0

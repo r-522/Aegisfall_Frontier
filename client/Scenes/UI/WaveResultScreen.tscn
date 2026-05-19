@@ -1,0 +1,88 @@
+[gd_scene load_steps=2 format=3 uid="uid://waveresult001"]
+
+[ext_resource type="Script" path="res://Scenes/UI/WaveResultScreen.gd" id="1_script"]
+
+[node name="WaveResultScreen" type="CanvasLayer"]
+script = ExtResource("1_script")
+visible = false
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+custom_minimum_size = Vector2(500, 400)
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="WaveLabel" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+text = "ウェーブ完了!"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 24
+
+[node name="StatsGrid" type="GridContainer" parent="Panel/VBox"]
+layout_mode = 2
+columns = 2
+
+[node name="KillsLabel" type="Label" parent="Panel/VBox/StatsGrid"]
+layout_mode = 2
+text = "撃破数:"
+
+[node name="KillsValue" type="Label" parent="Panel/VBox/StatsGrid"]
+layout_mode = 2
+text = "0"
+
+[node name="DamageLabel" type="Label" parent="Panel/VBox/StatsGrid"]
+layout_mode = 2
+text = "総ダメージ:"
+
+[node name="DamageValue" type="Label" parent="Panel/VBox/StatsGrid"]
+layout_mode = 2
+text = "0"
+
+[node name="TowersLabel" type="Label" parent="Panel/VBox/StatsGrid"]
+layout_mode = 2
+text = "タワー残存:"
+
+[node name="TowersValue" type="Label" parent="Panel/VBox/StatsGrid"]
+layout_mode = 2
+text = "0"
+
+[node name="RewardLabel" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+text = "報酬"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+
+[node name="RewardsGrid" type="GridContainer" parent="Panel/VBox"]
+layout_mode = 2
+columns = 2
+
+[node name="GoldLabel" type="Label" parent="Panel/VBox/RewardsGrid"]
+layout_mode = 2
+text = "ゴールド:"
+
+[node name="GoldValue" type="Label" parent="Panel/VBox/RewardsGrid"]
+layout_mode = 2
+text = "+0"
+
+[node name="XPLabel" type="Label" parent="Panel/VBox/RewardsGrid"]
+layout_mode = 2
+text = "経験値:"
+
+[node name="XPValue" type="Label" parent="Panel/VBox/RewardsGrid"]
+layout_mode = 2
+text = "+0"
+
+[node name="ContinueButton" type="Button" parent="Panel/VBox"]
+layout_mode = 2
+text = "続ける"

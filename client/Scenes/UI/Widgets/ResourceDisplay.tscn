@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://resourcedisplay001"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Widgets/ResourceDisplay.gd" id="1_script"]
+
+[node name="ResourceDisplay" type="HBoxContainer"]
+script = ExtResource("1_script")
+custom_minimum_size = Vector2(200, 40)
+
+[node name="BuildMatIcon" type="ColorRect" parent="."]
+layout_mode = 2
+custom_minimum_size = Vector2(20, 20)
+color = Color(0.4, 0.7, 0.4, 1)
+
+[node name="BuildMatLabel" type="Label" parent="."]
+layout_mode = 2
+text = "300"
+
+[node name="Spacer" type="Control" parent="."]
+layout_mode = 2
+custom_minimum_size = Vector2(16, 0)
+
+[node name="GoldIcon" type="ColorRect" parent="."]
+layout_mode = 2
+custom_minimum_size = Vector2(20, 20)
+color = Color(0.9, 0.8, 0.1, 1)
+
+[node name="GoldLabel" type="Label" parent="."]
+layout_mode = 2
+text = "0"

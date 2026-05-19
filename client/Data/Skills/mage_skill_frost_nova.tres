@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://mage_skill1"]
+
+[ext_resource type="Script" path="res://Data/Skills/SkillData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+skill_id = &"frost_nova"
+display_name = "フロストノヴァ"
+description = "周囲の敵を凍結、次の炎魔法を2倍強化"
+skill_type = 0
+target_type = 2
+mana_cost = 35.0
+cooldown = 15.0
+cast_time = 0.3
+range = 0.0
+area_radius = 5.0
+base_damage = 20.0
+base_heal = 0.0
+buff_duration = 3.0
+effect_id = &"frozen"

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://arcaneblast001"]
+
+[ext_resource type="PackedScene" path="res://Scenes/Projectiles/ProjectileBase.tscn" id="1_base"]
+[ext_resource type="Script" path="res://Scenes/Projectiles/ArcaneBlast.gd" id="2_script"]
+
+[sub_resource type="SphereMesh" id="Mesh_blast"]
+radius = 0.25
+height = 0.5
+
+[node name="ArcaneBlast" instance=ExtResource("1_base")]
+script = ExtResource("2_script")
+
+[node name="MeshInstance3D" parent="."]
+mesh = SubResource("Mesh_blast")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.4, 0.2, 0.9, 1)
+light_energy = 2.0
+omni_range = 3.0

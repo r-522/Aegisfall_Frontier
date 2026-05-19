@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://mage001"]
+
+[ext_resource type="PackedScene" path="res://Scenes/Characters/PlayerBase.tscn" id="1_base"]
+[ext_resource type="Script" path="res://Scenes/Characters/Mage.gd" id="2_mage"]
+[ext_resource type="Resource" path="res://Data/Characters/mage_data.tres" id="3_data"]
+
+[node name="Mage" instance=ExtResource("1_base")]
+script = ExtResource("2_mage")
+character_data = ExtResource("3_data")

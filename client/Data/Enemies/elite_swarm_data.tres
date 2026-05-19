@@ -1,0 +1,31 @@
+[gd_resource type="EnemyData" format=3 uid="uid://eliteswarmdata"]
+
+[resource]
+enemy_id = &"elite_swarm"
+display_name = "Elite Swarm"
+enemy_type = 9
+max_health = 200.0
+defense = 0.0
+move_speed = 4.5
+attack_damage = 15.0
+attack_range = 1.5
+attack_cooldown = 1.2
+xp_reward = 20
+gold_reward = 10
+build_material_reward = 0.8
+loot_weight = 1.2
+target_priority = 0
+movement_type = 0
+detection_range = 14.0
+can_attack_structures = false
+structure_damage_multiplier = 1.0
+flee_health_threshold = 0.0
+is_elite = true
+is_boss = false
+can_fly = false
+fly_height = 3.0
+can_summon_minions = false
+minion_type_id = &""
+minion_count = 3
+on_death_effect_id = &""
+on_hit_effect_id = &""

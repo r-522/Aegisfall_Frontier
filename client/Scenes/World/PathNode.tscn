@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://pathnode001"]
+
+[node name="PathNode" type="Node3D"]
+
+[node name="Marker" type="MeshInstance3D" parent="."]
+visible = false

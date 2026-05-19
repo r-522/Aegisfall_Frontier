@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://scout_data_001"]
+
+[ext_resource type="Script" path="res://Data/Characters/CharacterData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+character_id = &"scout"
+display_name = "Scout"
+class_category = 3
+max_health = 225.0
+base_defense = 8.0
+max_mana = 120.0
+mana_regen_rate = 7.0
+move_speed = 7.0
+run_speed = 12.0
+dash_speed = 28.0
+dash_duration = 0.15
+dash_cooldown = 0.6
+jump_force = 10.0
+base_attack_damage = 35.0
+base_heavy_attack_damage = 55.0
+attack_speed = 1.4
+attack_range = 14.0
+crit_chance = 0.18
+crit_multiplier = 1.8

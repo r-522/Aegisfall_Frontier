@@ -1,0 +1,29 @@
+[gd_resource type="TowerData" format=3 uid="uid://flameturretdata"]
+
+[resource]
+tower_id = &"flame_turret"
+display_name = "Flame Turret"
+description = "火炎放射器を搭載した連続攻撃塔。短射程だが毎秒安定したダメージを与え続ける。"
+category = 1
+attack_behavior = 3
+build_cost = 170
+upgrade_cost = 255
+sell_value = 119
+max_health = 300.0
+attack_damage = 30.0
+attack_range = 8.0
+attack_cooldown = 0.1
+aoe_radius = 0.0
+projectile_speed = 0.0
+piercing = false
+buff_type = &""
+buff_value = 0.0
+buff_radius = 0.0
+buff_tick_rate = 0.0
+heal_per_tick = 0.0
+mana_restore_per_tick = 0.0
+special_effect_id = &"burn"
+special_effect_radius = 0.0
+slow_multiplier = 1.0
+pull_force = 0.0
+preview_color = Color(1.0, 0.3, 0.1, 0.5)

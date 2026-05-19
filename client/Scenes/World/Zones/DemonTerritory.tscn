@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://demonterritory001"]
+
+[sub_resource type="StandardMaterial3D" id="Mat_demon"]
+albedo_color = Color(0.15, 0.05, 0.2, 1)
+emission_enabled = true
+emission = Color(0.4, 0.0, 0.6, 1)
+emission_energy_multiplier = 0.2
+roughness = 0.7
+
+[sub_resource type="BoxMesh" id="BoxMesh_terrain"]
+size = Vector3(100, 0.5, 100)
+
+[node name="DemonTerritory" type="Node3D"]
+
+[node name="Terrain" type="StaticBody3D" parent="."]
+collision_layer = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Terrain"]
+mesh = SubResource("BoxMesh_terrain")
+surface_material_override/0 = SubResource("Mat_demon")
+
+[node name="DemonicAmbience" type="OmniLight3D" parent="."]
+position = Vector3(0, 10, 0)
+light_color = Color(0.5, 0.0, 0.8, 1)
+light_energy = 0.8
+omni_range = 60.0

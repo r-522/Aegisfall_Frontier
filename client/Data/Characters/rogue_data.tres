@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://rogue_data_001"]
+
+[ext_resource type="Script" path="res://Data/Characters/CharacterData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+character_id = &"rogue"
+display_name = "Rogue"
+class_category = 3
+max_health = 215.0
+base_defense = 8.0
+max_mana = 130.0
+mana_regen_rate = 7.0
+move_speed = 6.2
+run_speed = 10.5
+dash_speed = 25.0
+dash_duration = 0.16
+dash_cooldown = 0.75
+jump_force = 9.0
+base_attack_damage = 42.0
+base_heavy_attack_damage = 65.0
+attack_speed = 1.7
+attack_range = 1.8
+crit_chance = 0.22
+crit_multiplier = 2.0

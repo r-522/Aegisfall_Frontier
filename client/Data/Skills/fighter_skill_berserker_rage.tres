@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://fighter_skill4"]
+
+[ext_resource type="Script" path="res://Data/Skills/SkillData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+skill_id = &"berserker_rage"
+display_name = "バーサーカーレイジ"
+description = "一時無敵+HP回復のアルティメット"
+skill_type = 2
+target_type = 0
+mana_cost = 60.0
+cooldown = 60.0
+cast_time = 0.0
+range = 0.0
+area_radius = 0.0
+base_damage = 0.0
+base_heal = 80.0
+buff_duration = 6.0
+effect_id = &"invincible"

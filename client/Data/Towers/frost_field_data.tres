@@ -1,0 +1,29 @@
+[gd_resource type="TowerData" format=3 uid="uid://frostfielddata"]
+
+[resource]
+tower_id = &"frost_field"
+display_name = "Frost Field"
+description = "周囲に氷結フィールドを展開する特殊タワー。範囲内の敵の移動速度を低下させる。"
+category = 3
+attack_behavior = 5
+build_cost = 160
+upgrade_cost = 240
+sell_value = 112
+max_health = 200.0
+attack_damage = 0.0
+attack_range = 0.0
+attack_cooldown = 0.0
+aoe_radius = 0.0
+projectile_speed = 0.0
+piercing = false
+buff_type = &""
+buff_value = 0.0
+buff_radius = 0.0
+buff_tick_rate = 0.0
+heal_per_tick = 0.0
+mana_restore_per_tick = 0.0
+special_effect_id = &"freeze_slow"
+special_effect_radius = 6.0
+slow_multiplier = 0.4
+pull_force = 0.0
+preview_color = Color(0.4, 0.8, 1.0, 0.5)

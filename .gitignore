@@ -1,0 +1,43 @@
+# Godot 4 .gitignore
+
+# Godot-specific ignores
+.godot/
+*.translation
+export.cfg
+export_credentials.cfg
+
+# Imported translations (automatically generated from CSV files)
+*.import
+
+# Avoid ignoring Godot-generated files
+!.gitkeep
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor-specific files
+.idea/
+.vscode/
+*.suo
+*.user
+
+# Build outputs
+build/
+dist/
+*.x86_64
+*.x86
+*.arm64
+*.arm32
+*.pck
+*.apk
+*.aab
+*.exe
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
