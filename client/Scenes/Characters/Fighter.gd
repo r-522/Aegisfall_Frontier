@@ -119,11 +119,11 @@ func _activate_cone_hitbox(damage: float, range: float, angle_deg: float, knockb
 	for enemy in enemies:
 		if not is_instance_valid(enemy):
 			continue
-		var to_enemy := (enemy.global_position - global_position)
+		var to_enemy: Vector3 = (enemy as Node3D).global_position - global_position
 		if to_enemy.length() > range:
 			continue
-		var dir_2d := Vector2(to_enemy.x, to_enemy.z).normalized()
-		var fwd_2d := Vector2(forward.x, forward.z).normalized()
+		var dir_2d: Vector2 = Vector2(to_enemy.x, to_enemy.z).normalized()
+		var fwd_2d: Vector2 = Vector2(forward.x, forward.z).normalized()
 		if dir_2d.dot(fwd_2d) < cos(angle_rad):
 			continue
 		_apply_damage_to(enemy, damage, knockback)
@@ -147,5 +147,5 @@ func _apply_damage_to(enemy: Node, damage: float, knockback: float) -> void:
 	if actual > 0.0:
 		EventBus.hit_confirmed.emit(self, enemy, actual, false)
 	if knockback > 0.0 and enemy is CharacterBody3D:
-		var dir := (enemy.global_position - global_position).normalized()
-		enemy.velocity += dir * knockback
+		var dir: Vector3 = ((enemy as Node3D).global_position - global_position).normalized()
+		(enemy as CharacterBody3D).velocity += dir * knockback

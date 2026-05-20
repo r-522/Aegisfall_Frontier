@@ -10,7 +10,7 @@ var current_wave_index: int = 0
 var _active_enemies: Array[Node] = []
 var _is_wave_active: bool = false
 
-@onready var spawn_system: SpawnSystem = $../SpawnSystem
+@onready var spawn_system: SpawnSystem = $"../SpawnSystem"
 
 func _ready() -> void:
 	EventBus.enemy_died.connect(_on_enemy_died)

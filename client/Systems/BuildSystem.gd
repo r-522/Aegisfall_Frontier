@@ -7,7 +7,7 @@ extends Node
 @export var build_grid: BuildGrid
 @export var placement_layer_mask: int = 0b0001  ## レイキャストで地面を検出するレイヤー
 
-@onready var resource_system: ResourceSystem = $../ResourceSystem
+@onready var resource_system: ResourceSystem = $"../ResourceSystem"
 
 # --- ランタイム状態 ---
 var _selected_tower_data: TowerData = null
@@ -321,16 +321,16 @@ func _get_cursor_world_position() -> Vector3:
 	var ray_dir    := camera.project_ray_normal(mouse_pos)
 	var ray_end    := ray_origin + ray_dir * 200.0
 
-	var space_state := get_tree().current_scene.get_world_3d().direct_space_state
+	var space_state: PhysicsDirectSpaceState3D = (get_tree().current_scene as Node3D).get_world_3d().direct_space_state
 	var query := PhysicsRayQueryParameters3D.create(
 		ray_origin, ray_end, placement_layer_mask
 	)
 	query.exclude = [_preview_instance] if is_instance_valid(_preview_instance) else []
 
-	var result := space_state.intersect_ray(query)
+	var result: Dictionary = space_state.intersect_ray(query)
 	if result.is_empty():
 		return Vector3.INF
-	return result.position
+	return result["position"]
 
 # ========================================================================== #
 # イベントハンドラ

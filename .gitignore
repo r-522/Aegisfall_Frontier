@@ -35,6 +35,9 @@ dist/
 *.aab
 *.exe
 
+# Web export goes to web/game/ — allow it through despite *.pck rule above
+!web/game/**
+
 # Logs
 *.log
 

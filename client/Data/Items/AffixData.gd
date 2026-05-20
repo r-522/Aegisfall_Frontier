@@ -26,7 +26,7 @@ enum AffixType {
 @export var display_name: String
 @export var affix_type: AffixType = AffixType.DAMAGE_FLAT
 @export var value: float = 0.0
-@export var element: ItemData.Element = ItemData.Element.NONE
+@export var element: int = 0  ## ItemData.Element の値 (循環依存回避のため int)
 @export var tier: int = 1
 
 func affects_damage() -> bool:
