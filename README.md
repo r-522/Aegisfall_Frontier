@@ -138,6 +138,74 @@ assets/             テクスチャ / モデル / 音声 (外部制作)
 
 ---
 
+## Vercel デプロイ (Web版)
+
+Godot 4 の HTML5 エクスポートを使用して、シングルプレイをブラウザで動かすことができます。
+**マルチプレイは ENet (UDP) を使用しているためブラウザ版では無効** です。
+
+### 手順
+
+#### 1. Godot Web テンプレートのインストール
+
+Godot Editor → Project → Export → 「Manage Export Templates」→
+`4.x.x.stable` の `Web` テンプレートをダウンロード。
+
+#### 2. HTMLビルド
+
+```sh
+# 自動スクリプト (GODOT_BIN に godot4 のパスを指定)
+GODOT_BIN=/path/to/godot4 bash scripts/export_web.sh
+
+# または手動
+godot4 --headless --path client/ --export-release "Web (Vercel)" build/web/index.html
+```
+
+`build/web/` に以下が生成されます:
+```
+build/web/
+  index.html
+  index.js
+  index.wasm
+  index.pck
+  index.audio.worklet.js
+```
+
+#### 3. Vercel CLIでデプロイ
+
+```sh
+# Vercel CLI インストール (未インストールの場合)
+npm i -g vercel
+
+# リポジトリルートで実行 (vercel.json が自動適用される)
+vercel --prod
+```
+
+`vercel.json` には Godot の SharedArrayBuffer/Thread に必要な
+COOP/COEP セキュリティヘッダーが設定済みです。
+
+#### 4. Vercel ダッシュボード設定
+
+| 設定項目 | 値 |
+|---------|-----|
+| Framework Preset | Other |
+| Build Command | (空欄) |
+| Output Directory | `build/web` |
+| Root Directory | (リポジトリルート) |
+
+または GitHub 連携後 `vercel.json` が自動認識されます。
+
+### 制限事項
+
+| 機能 | Web版 |
+|------|-------|
+| シングルプレイ | ✅ 動作 |
+| マルチプレイ (ENet) | ❌ UDP不可 |
+| セーブデータ | ✅ IndexedDB に保存 |
+| フルスクリーン | ✅ ブラウザAPIで可能 |
+| 音声 | ✅ Web Audio API |
+
+---
+
 ## ライセンス
 
 Proprietary — All rights reserved.
