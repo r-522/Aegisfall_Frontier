@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://buildmenu001"]
+[gd_scene load_steps=3 format=3 uid="uid://buildmenu001"]
 
 [ext_resource type="Script" path="res://Scenes/UI/BuildMenu.gd" id="1_script"]
+[ext_resource type="Theme" path="res://Assets/UI/dark_theme.tres" id="2_theme"]
 
 [node name="BuildMenu" type="CanvasLayer"]
 script = ExtResource("1_script")
@@ -17,6 +18,7 @@ offset_top = -220.0
 grow_horizontal = 2
 grow_vertical = 0
 custom_minimum_size = Vector2(0, 220)
+theme = ExtResource("2_theme")
 
 [node name="VBox" type="VBoxContainer" parent="Panel"]
 layout_mode = 2

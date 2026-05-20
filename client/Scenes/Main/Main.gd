@@ -19,6 +19,44 @@ const MAGE_SCENE := preload("res://Scenes/Characters/Mage.tscn")
 const RANGER_SCENE := preload("res://Scenes/Characters/Ranger.tscn")
 const CLERIC_SCENE := preload("res://Scenes/Characters/Cleric.tscn")
 
+const CLASS_SCENE_PATHS: Dictionary = {
+	&"warrior": "res://Scenes/Characters/Warrior.tscn",
+	&"knight": "res://Scenes/Characters/Knight.tscn",
+	&"paladin": "res://Scenes/Characters/Paladin.tscn",
+	&"berserker": "res://Scenes/Characters/Berserker.tscn",
+	&"monk": "res://Scenes/Characters/Monk.tscn",
+	&"samurai": "res://Scenes/Characters/Samurai.tscn",
+	&"dragoon": "res://Scenes/Characters/Dragoon.tscn",
+	&"barbarian": "res://Scenes/Characters/Barbarian.tscn",
+	&"wizard": "res://Scenes/Characters/Wizard.tscn",
+	&"sorcerer": "res://Scenes/Characters/Sorcerer.tscn",
+	&"warlock": "res://Scenes/Characters/Warlock.tscn",
+	&"necromancer": "res://Scenes/Characters/Necromancer.tscn",
+	&"elementalist": "res://Scenes/Characters/Elementalist.tscn",
+	&"time_mage": "res://Scenes/Characters/TimeMage.tscn",
+	&"sage": "res://Scenes/Characters/Sage.tscn",
+	&"priest": "res://Scenes/Characters/Priest.tscn",
+	&"bishop": "res://Scenes/Characters/Bishop.tscn",
+	&"druid": "res://Scenes/Characters/Druid.tscn",
+	&"shaman": "res://Scenes/Characters/Shaman.tscn",
+	&"bard": "res://Scenes/Characters/Bard.tscn",
+	&"enchanter": "res://Scenes/Characters/Enchanter.tscn",
+	&"thief": "res://Scenes/Characters/Thief.tscn",
+	&"rogue": "res://Scenes/Characters/Rogue.tscn",
+	&"assassin_class": "res://Scenes/Characters/AssassinClass.tscn",
+	&"ninja": "res://Scenes/Characters/Ninja.tscn",
+	&"archer": "res://Scenes/Characters/Archer.tscn",
+	&"scout": "res://Scenes/Characters/Scout.tscn",
+	&"summoner": "res://Scenes/Characters/Summoner.tscn",
+	&"beastmaster": "res://Scenes/Characters/Beastmaster.tscn",
+	&"alchemist": "res://Scenes/Characters/Alchemist.tscn",
+	&"gunner": "res://Scenes/Characters/Gunner.tscn",
+	&"machinist": "res://Scenes/Characters/Machinist.tscn",
+	&"spellblade": "res://Scenes/Characters/Spellblade.tscn",
+	&"rune_knight": "res://Scenes/Characters/RuneKnight.tscn",
+	&"trickster": "res://Scenes/Characters/Trickster.tscn",
+}
+
 var _local_player: PlayerBase = null
 var _all_players: Dictionary = {}
 
@@ -80,7 +118,12 @@ func _get_class_scene(class_id: StringName) -> PackedScene:
 		&"mage": return MAGE_SCENE
 		&"ranger": return RANGER_SCENE
 		&"cleric": return CLERIC_SCENE
-		_: return FIGHTER_SCENE
+	if CLASS_SCENE_PATHS.has(class_id):
+		var path: String = CLASS_SCENE_PATHS[class_id]
+		var scene: PackedScene = load(path)
+		if scene != null:
+			return scene
+	return FIGHTER_SCENE
 
 func _get_spawn_position() -> Vector3:
 	var spawn_points := get_tree().get_nodes_in_group(&"spawn_point_player")

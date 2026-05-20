@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://waveresult001"]
+[gd_scene load_steps=3 format=3 uid="uid://waveresult001"]
 
 [ext_resource type="Script" path="res://Scenes/UI/WaveResultScreen.gd" id="1_script"]
+[ext_resource type="Theme" path="res://Assets/UI/dark_theme.tres" id="2_theme"]
 
 [node name="WaveResultScreen" type="CanvasLayer"]
 script = ExtResource("1_script")
@@ -18,6 +19,7 @@ offset_top = -200.0
 offset_right = 250.0
 offset_bottom = 200.0
 custom_minimum_size = Vector2(500, 400)
+theme = ExtResource("2_theme")
 
 [node name="VBox" type="VBoxContainer" parent="Panel"]
 layout_mode = 2
