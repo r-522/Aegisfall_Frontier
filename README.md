@@ -138,63 +138,60 @@ assets/             テクスチャ / モデル / 音声 (外部制作)
 
 ---
 
-## Vercel デプロイ (Web版)
+## Vercel デプロイ
 
-Godot 4 の HTML5 エクスポートを使用して、シングルプレイをブラウザで動かすことができます。
-**マルチプレイは ENet (UDP) を使用しているためブラウザ版では無効** です。
+設計書の通り、Vercel は **ランディングページ / ランチャー / 管理画面 UI** 向けです。
+ゲーム本体 (Godot) は UDP/ENet を使用するためVercelでは配信できません(別配信)。
 
-### 手順
+### 構成
 
-#### 1. Godot Web テンプレートのインストール
+```
+vercel.json          ← outputDirectory: "web"
+web/
+  index.html         ← ランディングページ
+  style.css          ← Diablo IV 風スタイル
+  (将来) game/       ← Godot HTML5 エクスポート出力 (オプション)
+```
 
-Godot Editor → Project → Export → 「Manage Export Templates」→
-`4.x.x.stable` の `Web` テンプレートをダウンロード。
-
-#### 2. HTMLビルド
+### A. ランディングページのみデプロイ (推奨・即デプロイ可能)
 
 ```sh
-# 自動スクリプト (GODOT_BIN に godot4 のパスを指定)
-GODOT_BIN=/path/to/godot4 bash scripts/export_web.sh
-
-# または手動
-godot4 --headless --path client/ --export-release "Web (Vercel)" build/web/index.html
-```
-
-`build/web/` に以下が生成されます:
-```
-build/web/
-  index.html
-  index.js
-  index.wasm
-  index.pck
-  index.audio.worklet.js
-```
-
-#### 3. Vercel CLIでデプロイ
-
-```sh
-# Vercel CLI インストール (未インストールの場合)
+# Vercel CLI インストール
 npm i -g vercel
 
-# リポジトリルートで実行 (vercel.json が自動適用される)
+# リポジトリルートで実行
 vercel --prod
 ```
 
-`vercel.json` には Godot の SharedArrayBuffer/Thread に必要な
-COOP/COEP セキュリティヘッダーが設定済みです。
+ビルド不要。`web/` の静的ファイルがそのまま配信される。
 
-#### 4. Vercel ダッシュボード設定
+または GitHub 連携:
+1. Vercel ダッシュボード → New Project → GitHub リポジトリ選択
+2. Framework Preset: **Other**
+3. Build Command: **空欄**
+4. Output Directory: **`web`**
+5. Deploy
 
-| 設定項目 | 値 |
-|---------|-----|
-| Framework Preset | Other |
-| Build Command | (空欄) |
-| Output Directory | `build/web` |
-| Root Directory | (リポジトリルート) |
+### B. ゲーム HTML5 版を同居させる (オプション)
 
-または GitHub 連携後 `vercel.json` が自動認識されます。
+ランディングページの `/game/` パスでシングルプレイ版を配信したい場合:
 
-### 制限事項
+```sh
+# 1. Godot Editor で Web テンプレートをインストール
+#    Project → Export → Manage Export Templates → Web
+
+# 2. HTML5 ビルド (web/game/ 直下に出力)
+GODOT_BIN=/path/to/godot4 godot4 --headless --path client/ \
+  --export-release "Web (Vercel)" web/game/index.html
+
+# 3. デプロイ
+vercel --prod
+```
+
+`vercel.json` の `/game/(.*)` ルールにより、`/game/` 配下にのみ
+Godot の SharedArrayBuffer/Thread 用 COOP/COEP ヘッダーが適用されます。
+
+### Web版の制限事項
 
 | 機能 | Web版 |
 |------|-------|
