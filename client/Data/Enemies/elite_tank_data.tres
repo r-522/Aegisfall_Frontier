@@ -2,6 +2,7 @@
 
 [resource]
 enemy_id = &"elite_tank"
+scene_path = "res://Scenes/Enemies/EliteTank.tscn"
 display_name = "Elite Tank"
 enemy_type = 9
 max_health = 900.0

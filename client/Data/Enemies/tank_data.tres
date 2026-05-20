@@ -2,6 +2,7 @@
 
 [resource]
 enemy_id = &"tank"
+scene_path = "res://Scenes/Enemies/TankEnemy.tscn"
 display_name = "Tank"
 enemy_type = 1
 max_health = 400.0

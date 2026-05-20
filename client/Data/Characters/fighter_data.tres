@@ -1,4 +1,9 @@
-[gd_resource type="CharacterData" format=3 uid="uid://fighterdata"]
+[gd_resource type="CharacterData" load_steps=5 format=3 uid="uid://fighterdata"]
+
+[ext_resource type="Resource" path="res://Data/Skills/fighter_skill_shield_bash.tres" id="1_sk"]
+[ext_resource type="Resource" path="res://Data/Skills/fighter_skill_whirlwind.tres" id="2_sk"]
+[ext_resource type="Resource" path="res://Data/Skills/fighter_skill_battle_cry.tres" id="3_sk"]
+[ext_resource type="Resource" path="res://Data/Skills/fighter_skill_berserker_rage.tres" id="4_sk"]
 
 [resource]
 character_id = &"fighter"
@@ -22,3 +27,6 @@ attack_range = 2.0
 crit_chance = 0.08
 crit_multiplier = 2.0
 preferred_tower_category = 1
+tower_build_speed_bonus = 0.0
+tower_damage_bonus = 0.0
+skills = [ExtResource("1_sk"), ExtResource("2_sk"), ExtResource("3_sk"), ExtResource("4_sk")]

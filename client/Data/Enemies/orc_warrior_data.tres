@@ -2,6 +2,7 @@
 
 [resource]
 enemy_id = &"orc_warrior"
+scene_path = "res://Scenes/Enemies/OrcWarrior.tscn"
 display_name = "Orc Warrior"
 enemy_type = 6
 max_health = 300.0

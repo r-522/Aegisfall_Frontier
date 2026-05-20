@@ -2,6 +2,7 @@
 
 [resource]
 enemy_id = &"assassin"
+scene_path = "res://Scenes/Enemies/AssassinEnemy.tscn"
 display_name = "Assassin"
 enemy_type = 4
 max_health = 150.0

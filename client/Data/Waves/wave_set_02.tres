@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://waveset02"]
+
+[ext_resource type="Script" path="res://Data/Waves/WaveData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+wave_number = 2
+wave_name = "ウェーブ 2: タンク部隊"
+time_limit = 0.0
+reward_build_material = 200
+reward_gold = 150
+bonus_material_per_survivor = 15
+is_night_wave = false
+weather_effect = 0
+ambient_darkness = 0.0
+simultaneous_waves = false
+elite_guaranteed = false
+spawn_entries = []

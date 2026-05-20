@@ -2,6 +2,7 @@
 
 [resource]
 enemy_id = &"swarm"
+scene_path = "res://Scenes/Enemies/SwarmEnemy.tscn"
 display_name = "Swarm"
 enemy_type = 0
 max_health = 50.0

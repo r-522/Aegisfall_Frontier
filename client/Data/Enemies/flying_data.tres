@@ -2,6 +2,7 @@
 
 [resource]
 enemy_id = &"flying"
+scene_path = "res://Scenes/Enemies/FlyingEnemy.tscn"
 display_name = "Flying"
 enemy_type = 3
 max_health = 120.0

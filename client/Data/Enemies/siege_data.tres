@@ -2,6 +2,7 @@
 
 [resource]
 enemy_id = &"siege"
+scene_path = "res://Scenes/Enemies/SiegeEnemy.tscn"
 display_name = "Siege"
 enemy_type = 2
 max_health = 250.0
