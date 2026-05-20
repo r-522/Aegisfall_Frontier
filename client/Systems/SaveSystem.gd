@@ -124,7 +124,7 @@ func load_game() -> Dictionary:
 
 ## セーブファイルを削除する
 func delete_save() -> void:
-	if DirAccess.file_exists_absolute(ProjectSettings.globalize_path(_SAVE_PATH)):
+	if FileAccess.file_exists(_SAVE_PATH):
 		var err := DirAccess.remove_absolute(ProjectSettings.globalize_path(_SAVE_PATH))
 		if err != OK:
 			push_error("SaveSystem: 削除に失敗しました (error=%d)" % err)

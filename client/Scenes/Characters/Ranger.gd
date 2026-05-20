@@ -110,7 +110,7 @@ func _skill_rain_of_arrows(skill: SkillData) -> void:
 	var target_pos := get_aim_target(30.0)
 	_start_rain_of_arrows(target_pos, skill.damage, skill.effect_radius, int(skill.duration * 2))
 
-async func _start_rain_of_arrows(center: Vector3, damage: float, radius: float, arrow_count: int) -> void:
+func _start_rain_of_arrows(center: Vector3, damage: float, radius: float, arrow_count: int) -> void:
 	for i in arrow_count:
 		if not is_instance_valid(self):
 			return

@@ -59,7 +59,7 @@ func _refresh_inventory_grid() -> void:
 	for i in _bound_inventory.items.size():
 		var btn := Button.new()
 		btn.custom_minimum_size = SLOT_SIZE
-		var item := _bound_inventory.items[i]
+		var item: ItemData = _bound_inventory.items[i] as ItemData
 		if item:
 			btn.text = "%s\nx%d" % [item.display_name, item.quantity]
 			btn.modulate = item.get_rarity_color()
@@ -103,14 +103,14 @@ func _clear_grid() -> void:
 func _on_slot_pressed(slot_index: int) -> void:
 	if _bound_inventory == null:
 		return
-	var item := _bound_inventory.items[slot_index] if slot_index < _bound_inventory.items.size() else null
+	var item: ItemData = (_bound_inventory.items[slot_index] as ItemData) if slot_index < _bound_inventory.items.size() else null
 	if item == null:
 		return
 	if item.category < ItemData.ItemCategory.CONSUMABLE:
 		_bound_inventory.equip(slot_index)
 
 func _on_slot_hovered(slot_index: int) -> void:
-	var item := _bound_inventory.items[slot_index] if slot_index < _bound_inventory.items.size() else null
+	var item: ItemData = (_bound_inventory.items[slot_index] as ItemData) if slot_index < _bound_inventory.items.size() else null
 	_show_detail(item)
 
 func _on_equipment_pressed(category: int) -> void:
