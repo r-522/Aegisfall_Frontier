@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://inventoryscreen001"]
+
+[ext_resource type="Script" path="res://Scenes/UI/InventoryScreen.gd" id="1_script"]
+[ext_resource type="Theme" path="res://Assets/UI/dark_theme.tres" id="2_theme"]
+
+[node name="InventoryScreen" type="CanvasLayer"]
+script = ExtResource("1_script")
+visible = false
+
+[node name="Overlay" type="ColorRect" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.7)
+mouse_filter = 0
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -300.0
+offset_right = 480.0
+offset_bottom = 300.0
+theme = ExtResource("2_theme")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBox" type="HBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Equipment" type="VBoxContainer" parent="Panel/MarginContainer/HBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 0)
+
+[node name="EquipTitle" type="Label" parent="Panel/MarginContainer/HBox/Equipment"]
+layout_mode = 2
+text = "装備"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+
+[node name="SlotList" type="VBoxContainer" parent="Panel/MarginContainer/HBox/Equipment"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Separator" type="HSeparator" parent="Panel/MarginContainer/HBox/Equipment"]
+layout_mode = 2
+
+[node name="GoldLabel" type="Label" parent="Panel/MarginContainer/HBox/Equipment"]
+layout_mode = 2
+text = "ゴールド: 0"
+
+[node name="Inventory" type="VBoxContainer" parent="Panel/MarginContainer/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InvTitle" type="Label" parent="Panel/MarginContainer/HBox/Inventory"]
+layout_mode = 2
+text = "インベントリ"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/HBox/Inventory"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Grid" type="GridContainer" parent="Panel/MarginContainer/HBox/Inventory/ScrollContainer"]
+layout_mode = 2
+columns = 10
+
+[node name="Detail" type="VBoxContainer" parent="Panel/MarginContainer/HBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(250, 0)
+
+[node name="DetailTitle" type="Label" parent="Panel/MarginContainer/HBox/Detail"]
+layout_mode = 2
+text = "詳細"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+
+[node name="RichLabel" type="RichTextLabel" parent="Panel/MarginContainer/HBox/Detail"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[i]アイテムを選択してください[/i]"

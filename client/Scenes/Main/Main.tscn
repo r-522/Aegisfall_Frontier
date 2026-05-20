@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://main001"]
+[gd_scene load_steps=13 format=3 uid="uid://main001"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_main"]
 [ext_resource type="Script" path="res://Systems/PhaseManager.gd" id="2_phase"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Systems/FieldEventManager.gd" id="9_field"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/HUD.tscn" id="10_hud"]
 [ext_resource type="PackedScene" path="res://Scenes/World/Eldrath.tscn" id="11_world"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/InventoryScreen.tscn" id="12_inventory"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_main")
@@ -44,3 +45,5 @@ script = ExtResource("9_field")
 [node name="PlayersContainer" type="Node3D" parent="."]
 
 [node name="World" type="Node3D" parent="."]
+
+[node name="InventoryScreen" parent="." instance=ExtResource("12_inventory")]

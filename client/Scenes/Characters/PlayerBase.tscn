@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://playerbase001"]
+[gd_scene load_steps=11 format=3 uid="uid://playerbase001"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/PlayerBase.gd" id="1_pb"]
 [ext_resource type="Script" path="res://Components/HealthComponent.gd" id="2_health"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Components/HitStopComponent.gd" id="5_hitstop"]
 [ext_resource type="Script" path="res://Components/StatusEffectComponent.gd" id="6_status"]
 [ext_resource type="Script" path="res://Components/MoveComponent.gd" id="7_move"]
+[ext_resource type="Script" path="res://Components/InventoryComponent.gd" id="8_inventory"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1"]
 radius = 0.4
@@ -44,6 +45,9 @@ script = ExtResource("6_status")
 
 [node name="MoveComponent" type="Node" parent="."]
 script = ExtResource("7_move")
+
+[node name="InventoryComponent" type="Node" parent="."]
+script = ExtResource("8_inventory")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 

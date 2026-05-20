@@ -1,0 +1,17 @@
+[gd_resource type="ItemData" format=3 uid="uid://item_dragon_plate"]
+
+[resource]
+item_id = &"dragon_plate"
+display_name = "ドラゴンプレート"
+description = "伝説のドラゴン素材で作られた胸当て"
+category = 4
+rarity = 4
+element = 1
+base_damage = 0
+base_armor = 80
+base_health_bonus = 120
+base_mana_bonus = 0
+max_affixes = 4
+stack_size = 1
+sell_price = 1500
+quantity = 1

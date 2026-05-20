@@ -1,0 +1,17 @@
+[gd_resource type="ItemData" format=3 uid="uid://item_hunter_bow"]
+
+[resource]
+item_id = &"hunter_bow"
+display_name = "ハンターボウ"
+description = "狩人の弓"
+category = 1
+rarity = 1
+element = 0
+base_damage = 30
+base_armor = 0
+base_health_bonus = 0
+base_mana_bonus = 0
+max_affixes = 4
+stack_size = 1
+sell_price = 50
+quantity = 1

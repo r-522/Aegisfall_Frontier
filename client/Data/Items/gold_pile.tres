@@ -1,0 +1,17 @@
+[gd_resource type="ItemData" format=3 uid="uid://item_gold"]
+
+[resource]
+item_id = &"gold"
+display_name = "ゴールド"
+description = "通貨"
+category = 12
+rarity = 0
+element = 0
+base_damage = 0
+base_armor = 0
+base_health_bonus = 0
+base_mana_bonus = 0
+max_affixes = 4
+stack_size = 99999
+sell_price = 1
+quantity = 1

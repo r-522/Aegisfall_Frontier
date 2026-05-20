@@ -1,0 +1,17 @@
+[gd_resource type="ItemData" format=3 uid="uid://item_flame_sword"]
+
+[resource]
+item_id = &"flame_sword"
+display_name = "炎の剣"
+description = "炎属性を持つレア武器"
+category = 0
+rarity = 2
+element = 1
+base_damage = 45
+base_armor = 0
+base_health_bonus = 0
+base_mana_bonus = 10
+max_affixes = 4
+stack_size = 1
+sell_price = 120
+quantity = 1

@@ -1,0 +1,17 @@
+[gd_resource type="ItemData" format=3 uid="uid://item_health_potion"]
+
+[resource]
+item_id = &"health_potion"
+display_name = "ヘルスポーション"
+description = "HP50回復"
+category = 9
+rarity = 0
+element = 0
+base_damage = 0
+base_armor = 0
+base_health_bonus = 50
+base_mana_bonus = 0
+max_affixes = 4
+stack_size = 20
+sell_price = 10
+quantity = 1
