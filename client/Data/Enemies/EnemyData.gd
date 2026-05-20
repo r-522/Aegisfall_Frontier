@@ -6,6 +6,7 @@ extends Resource
 @export var enemy_id: StringName
 @export var display_name: String
 @export var enemy_type: EnemyType
+@export var scene_path: String = ""
 
 @export_group("ステータス")
 @export var max_health: float = 100.0

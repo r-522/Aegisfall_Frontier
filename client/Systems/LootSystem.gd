@@ -50,9 +50,68 @@ func _ready() -> void:
 	_build_loot_table()
 
 ## サブクラスでオーバーライドしてルートテーブルを構築する
-## デフォルトはテーブルを空のまま維持する
+## デフォルトでサンプルアイテムによる基本テーブルを構築
 func _build_loot_table() -> void:
-	pass
+	var gold: ItemData = load("res://Data/Items/gold_pile.tres")
+	var potion: ItemData = load("res://Data/Items/potion_health.tres")
+	var sword_common: ItemData = load("res://Data/Items/sword_common.tres")
+	var sword_rare: ItemData = load("res://Data/Items/sword_rare_fire.tres")
+	var bow: ItemData = load("res://Data/Items/bow_uncommon.tres")
+	var staff: ItemData = load("res://Data/Items/staff_epic_arcane.tres")
+	var helmet: ItemData = load("res://Data/Items/helmet_common.tres")
+	var chest: ItemData = load("res://Data/Items/chest_legendary.tres")
+	var ring: ItemData = load("res://Data/Items/ring_rare_holy.tres")
+
+	register_loot_table(&"swarm", [
+		LootEntry.new(gold, 2.0, 1, 3, false),
+		LootEntry.new(potion, 0.3, 1, 1, false),
+	])
+	register_loot_table(&"tank", [
+		LootEntry.new(gold, 3.0, 3, 8, false),
+		LootEntry.new(sword_common, 0.4, 1, 1, false),
+		LootEntry.new(helmet, 0.3, 1, 1, false),
+	])
+	register_loot_table(&"siege", [
+		LootEntry.new(gold, 2.5, 2, 6, false),
+		LootEntry.new(potion, 0.5, 1, 2, false),
+	])
+	register_loot_table(&"flying", [
+		LootEntry.new(gold, 2.0, 1, 4, false),
+		LootEntry.new(bow, 0.2, 1, 1, false),
+	])
+	register_loot_table(&"assassin", [
+		LootEntry.new(gold, 2.5, 2, 5, false),
+		LootEntry.new(ring, 0.15, 1, 1, false),
+	])
+	register_loot_table(&"elite_swarm", [
+		LootEntry.new(gold, 4.0, 5, 12, false),
+		LootEntry.new(potion, 0.6, 1, 2, false),
+		LootEntry.new(sword_rare, 0.2, 1, 1, false),
+	])
+	register_loot_table(&"elite_tank", [
+		LootEntry.new(gold, 5.0, 10, 20, false),
+		LootEntry.new(sword_rare, 0.3, 1, 1, false),
+		LootEntry.new(chest, 0.05, 1, 1, false),
+	])
+	register_loot_table(&"goblin_scout", [
+		LootEntry.new(gold, 1.5, 1, 3, false),
+	])
+	register_loot_table(&"orc_warrior", [
+		LootEntry.new(gold, 3.0, 3, 8, false),
+		LootEntry.new(sword_common, 0.35, 1, 1, false),
+	])
+	register_loot_table(&"dark_mage", [
+		LootEntry.new(gold, 3.5, 4, 10, false),
+		LootEntry.new(staff, 0.1, 1, 1, false),
+		LootEntry.new(ring, 0.2, 1, 1, false),
+	])
+	register_loot_table(&"boss", [
+		LootEntry.new(gold, 1.0, 100, 200, true),
+		LootEntry.new(chest, 1.0, 1, 1, true),
+		LootEntry.new(staff, 0.5, 1, 1, false),
+		LootEntry.new(sword_rare, 0.5, 1, 1, false),
+		LootEntry.new(ring, 0.4, 1, 1, false),
+	])
 
 # ========================================================================== #
 # パブリック API

@@ -2,6 +2,7 @@
 
 [resource]
 enemy_id = &"dark_mage"
+scene_path = "res://Scenes/Enemies/DarkMageEnemy.tscn"
 display_name = "Dark Mage"
 enemy_type = 7
 max_health = 180.0

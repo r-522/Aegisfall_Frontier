@@ -1,0 +1,17 @@
+[gd_resource type="ItemData" format=3 uid="uid://item_leather_helmet"]
+
+[resource]
+item_id = &"leather_helmet"
+display_name = "革兜"
+description = "軽量な頭防具"
+category = 3
+rarity = 0
+element = 0
+base_damage = 0
+base_armor = 8
+base_health_bonus = 15
+base_mana_bonus = 0
+max_affixes = 4
+stack_size = 1
+sell_price = 18
+quantity = 1

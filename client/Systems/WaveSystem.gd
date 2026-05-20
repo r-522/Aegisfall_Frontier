@@ -19,15 +19,69 @@ func _ready() -> void:
 ## PhaseManager (または PhaseManager 経由の WAVE_DEFENSE フェーズ) から呼ぶ
 func start_wave() -> void:
 	if current_wave_index >= wave_data_set.size():
-		# 全ウェーブクリア済み — 最終スコアを計算して終了
 		EventBus.session_ended.emit(true, _calculate_score())
 		return
 
 	var wave: WaveData = wave_data_set[current_wave_index]
+	if wave.spawn_entries.is_empty():
+		_fill_procedural_entries(wave)
 	_is_wave_active = true
 	_active_enemies.clear()
 	EventBus.wave_started.emit(wave.wave_number, wave.get_total_enemy_count())
 	_spawn_wave(wave)
+
+## spawn_entries が空の場合、wave_number に応じて手続き的に生成する
+func _fill_procedural_entries(wave: WaveData) -> void:
+	var wn := wave.wave_number
+	var swarm_data: EnemyData = load("res://Data/Enemies/swarm_data.tres")
+	var tank_data: EnemyData = load("res://Data/Enemies/tank_data.tres")
+	var flying_data: EnemyData = load("res://Data/Enemies/flying_data.tres")
+	var elite_swarm_data: EnemyData = load("res://Data/Enemies/elite_swarm_data.tres")
+	var boss_data: EnemyData = load("res://Data/Enemies/boss_data.tres")
+
+	var swarm_entry := WaveData.SpawnEntry.new()
+	swarm_entry.enemy_data = swarm_data
+	swarm_entry.count = 6 + wn * 2
+	swarm_entry.delay_between_spawns = 0.6
+	swarm_entry.spawn_point_indices = [0, 1, 2]
+	swarm_entry.spawn_delay_from_wave_start = 0.0
+	wave.spawn_entries.append(swarm_entry)
+
+	if wn >= 2 and tank_data:
+		var tank_entry := WaveData.SpawnEntry.new()
+		tank_entry.enemy_data = tank_data
+		tank_entry.count = 1 + wn / 2
+		tank_entry.delay_between_spawns = 2.0
+		tank_entry.spawn_point_indices = [0, 1]
+		tank_entry.spawn_delay_from_wave_start = 5.0
+		wave.spawn_entries.append(tank_entry)
+
+	if wn >= 3 and flying_data:
+		var fly_entry := WaveData.SpawnEntry.new()
+		fly_entry.enemy_data = flying_data
+		fly_entry.count = 2 + wn
+		fly_entry.delay_between_spawns = 1.0
+		fly_entry.spawn_point_indices = [3, 4]
+		fly_entry.spawn_delay_from_wave_start = 8.0
+		wave.spawn_entries.append(fly_entry)
+
+	if wn >= 4 and elite_swarm_data:
+		var elite_entry := WaveData.SpawnEntry.new()
+		elite_entry.enemy_data = elite_swarm_data
+		elite_entry.count = 2
+		elite_entry.delay_between_spawns = 3.0
+		elite_entry.spawn_point_indices = [0, 1, 2]
+		elite_entry.spawn_delay_from_wave_start = 12.0
+		wave.spawn_entries.append(elite_entry)
+
+	if wn >= 5 and boss_data and wave.boss_entry == null:
+		var boss_entry := WaveData.SpawnEntry.new()
+		boss_entry.enemy_data = boss_data
+		boss_entry.count = 1
+		boss_entry.delay_between_spawns = 0.0
+		boss_entry.spawn_point_indices = [0]
+		boss_entry.spawn_delay_from_wave_start = 20.0
+		wave.boss_entry = boss_entry
 
 func _spawn_wave(wave: WaveData) -> void:
 	spawn_system.spawn_wave(wave)

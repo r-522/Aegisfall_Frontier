@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://waveset04"]
+
+[ext_resource type="Script" path="res://Data/Waves/WaveData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+wave_number = 4
+wave_name = "ウェーブ 4: エリート進軍"
+time_limit = 0.0
+reward_build_material = 320
+reward_gold = 280
+bonus_material_per_survivor = 25
+is_night_wave = false
+weather_effect = 2
+ambient_darkness = 0.0
+simultaneous_waves = true
+elite_guaranteed = true
+spawn_entries = []

@@ -2,6 +2,7 @@
 
 [resource]
 enemy_id = &"elite_swarm"
+scene_path = "res://Scenes/Enemies/EliteSwarm.tscn"
 display_name = "Elite Swarm"
 enemy_type = 9
 max_health = 200.0

@@ -1,0 +1,17 @@
+[gd_resource type="ItemData" format=3 uid="uid://item_iron_sword"]
+
+[resource]
+item_id = &"iron_sword"
+display_name = "鉄の剣"
+description = "基本的な近接武器"
+category = 0
+rarity = 0
+element = 0
+base_damage = 20
+base_armor = 0
+base_health_bonus = 0
+base_mana_bonus = 0
+max_affixes = 4
+stack_size = 1
+sell_price = 15
+quantity = 1

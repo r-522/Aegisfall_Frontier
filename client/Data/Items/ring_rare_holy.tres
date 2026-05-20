@@ -1,0 +1,17 @@
+[gd_resource type="ItemData" format=3 uid="uid://item_holy_ring"]
+
+[resource]
+item_id = &"holy_ring"
+display_name = "聖なる指輪"
+description = "神聖な力を秘めた指輪"
+category = 8
+rarity = 2
+element = 4
+base_damage = 0
+base_armor = 0
+base_health_bonus = 30
+base_mana_bonus = 30
+max_affixes = 4
+stack_size = 1
+sell_price = 200
+quantity = 1

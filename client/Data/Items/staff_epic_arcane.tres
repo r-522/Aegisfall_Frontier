@@ -1,0 +1,17 @@
+[gd_resource type="ItemData" format=3 uid="uid://item_arcane_staff"]
+
+[resource]
+item_id = &"arcane_staff"
+display_name = "秘術の杖"
+description = "魔力を増幅する杖"
+category = 2
+rarity = 3
+element = 7
+base_damage = 65
+base_armor = 0
+base_health_bonus = 20
+base_mana_bonus = 50
+max_affixes = 4
+stack_size = 1
+sell_price = 350
+quantity = 1

@@ -13,6 +13,7 @@ extends Node
 @onready var hud: CanvasLayer = $HUD
 @onready var players_container: Node3D = $PlayersContainer
 @onready var world: Node3D = $World
+@onready var inventory_screen: CanvasLayer = $InventoryScreen
 
 const FIGHTER_SCENE := preload("res://Scenes/Characters/Fighter.tscn")
 const MAGE_SCENE := preload("res://Scenes/Characters/Mage.tscn")
@@ -138,6 +139,10 @@ func _connect_player_to_hud(player: PlayerBase) -> void:
 		return
 	player.health_component.health_changed.connect(hud.update_health)
 	player.mana_component.mana_changed.connect(hud.update_mana)
+	if inventory_screen and inventory_screen.has_method("bind_inventory"):
+		var inv := player.get_node_or_null("InventoryComponent")
+		if inv:
+			inventory_screen.bind_inventory(inv)
 
 func _on_remote_player_joined(peer_id: int) -> void:
 	if not multiplayer.is_server():

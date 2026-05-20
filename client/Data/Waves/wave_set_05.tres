@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://waveset05"]
+
+[ext_resource type="Script" path="res://Data/Waves/WaveData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+wave_number = 5
+wave_name = "ウェーブ 5: 魔王先兵 (ボスウェーブ)"
+time_limit = 300.0
+reward_build_material = 500
+reward_gold = 500
+bonus_material_per_survivor = 50
+is_night_wave = true
+weather_effect = 3
+ambient_darkness = 0.8
+simultaneous_waves = false
+elite_guaranteed = true
+spawn_entries = []

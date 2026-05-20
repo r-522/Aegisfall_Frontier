@@ -2,6 +2,7 @@
 
 [resource]
 enemy_id = &"goblin_scout"
+scene_path = "res://Scenes/Enemies/GoblinScout.tscn"
 display_name = "Goblin Scout"
 enemy_type = 5
 max_health = 60.0
