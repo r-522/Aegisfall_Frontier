@@ -22,6 +22,11 @@ boot_splash/show_image=false
 EventBus="*res://Autoloads/EventBus.gd"
 GameConfig="*res://Autoloads/GameConfig.gd"
 InputMapper="*res://Autoloads/InputMapper.gd"
+AudioManager="*res://Autoloads/AudioManager.gd"
+
+[audio]
+
+buses/default_bus_layout="res://default_bus_layout.tres"
 
 [display]
 
