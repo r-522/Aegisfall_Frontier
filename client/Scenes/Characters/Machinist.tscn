@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://machinist_scene"]
+
+[ext_resource type="PackedScene" path="res://Scenes/Characters/PlayerBase.tscn" id="1_base"]
+[ext_resource type="Script" path="res://Scenes/Characters/Machinist.gd" id="2_script"]
+[ext_resource type="Resource" path="res://Data/Characters/machinist_data.tres" id="3_data"]
+
+[node name="Machinist" instance=ExtResource("1_base")]
+script = ExtResource("2_script")
+character_data = ExtResource("3_data")
