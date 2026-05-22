@@ -1,4 +1,3 @@
-class_name NetworkManager
 extends Node
 ## ENetMultiplayerPeerによるホスト/参加管理
 ## Server Authoritative方式: 30Hz tick、60fps補間
