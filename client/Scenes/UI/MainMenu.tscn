@@ -3,83 +3,179 @@
 [ext_resource type="Script" path="res://Scenes/UI/MainMenu.gd" id="1_script"]
 [ext_resource type="Theme" path="res://Assets/UI/dark_theme.tres" id="2_theme"]
 
-[node name="MainMenu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_script")
+
+[node name="Control" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource("2_theme")
-script = ExtResource("1_script")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.04, 0.04, 0.07, 1)
+
+[node name="Center" type="CenterContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0.05, 0.05, 0.1, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="VBox" type="VBoxContainer" parent="Control/Center"]
+custom_minimum_size = Vector2(360, 0)
+theme_override_constants/separation = 18
 
-[node name="VBox" type="VBoxContainer" parent="CenterContainer"]
-custom_minimum_size = Vector2(350, 0)
-theme_override_constants/separation = 20
-
-[node name="Title" type="Label" parent="CenterContainer/VBox"]
+[node name="TitleLabel" type="Label" parent="Control/Center/VBox"]
 layout_mode = 2
 text = "Aegisfall Frontier"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 42
+theme_override_colors/font_color = Color(0.92, 0.88, 0.78, 1)
 
-[node name="Subtitle" type="Label" parent="CenterContainer/VBox"]
+[node name="VersionLabel" type="Label" parent="Control/Center/VBox"]
 layout_mode = 2
-text = "Frontier Legion — Advance on Eldrath"
+text = "v0.1.0"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.55, 0.5, 0.35, 1)
 
-[node name="Separator" type="HSeparator" parent="CenterContainer/VBox"]
+[node name="Sep" type="HSeparator" parent="Control/Center/VBox"]
 layout_mode = 2
+modulate = Color(0.8, 0.7, 0.4, 0.7)
 
-[node name="HostButton" type="Button" parent="CenterContainer/VBox"]
+[node name="SingleButton" type="Button" parent="Control/Center/VBox"]
 layout_mode = 2
-text = "ホスト (Host Game)"
+custom_minimum_size = Vector2(0, 52)
+text = "スタート  (シングルプレイ)"
+theme_override_font_sizes/font_size = 17
 
-[node name="JoinButton" type="Button" parent="CenterContainer/VBox"]
+[node name="MultiButton" type="Button" parent="Control/Center/VBox"]
 layout_mode = 2
-text = "参加 (Join Game)"
+custom_minimum_size = Vector2(0, 52)
+text = "スタート  (マルチプレイ)"
+theme_override_font_sizes/font_size = 17
 
-[node name="SoloButton" type="Button" parent="CenterContainer/VBox"]
+[node name="SettingsButton" type="Button" parent="Control/Center/VBox"]
 layout_mode = 2
-text = "ソロプレイ (Solo)"
+custom_minimum_size = Vector2(0, 52)
+text = "設定"
+theme_override_font_sizes/font_size = 17
 
-[node name="IPContainer" type="HBoxContainer" parent="CenterContainer/VBox"]
-layout_mode = 2
+[node name="MultiPanel" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210
+offset_top = -175
+offset_right = 210
+offset_bottom = 175
 visible = false
 
-[node name="IPLabel" type="Label" parent="CenterContainer/VBox/IPContainer"]
-layout_mode = 2
-text = "IP:"
+[node name="VBox" type="VBoxContainer" parent="Control/MultiPanel"]
+theme_override_constants/separation = 12
 
-[node name="IPInput" type="LineEdit" parent="CenterContainer/VBox/IPContainer"]
+[node name="PanelTitle" type="Label" parent="Control/MultiPanel/VBox"]
+layout_mode = 2
+text = "マルチプレイ"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.92, 0.88, 0.78, 1)
+
+[node name="IPInput" type="LineEdit" parent="Control/MultiPanel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 36)
+placeholder_text = "IPアドレス (例: 127.0.0.1)"
+
+[node name="PortInput" type="LineEdit" parent="Control/MultiPanel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 36)
+placeholder_text = "ポート番号"
+
+[node name="Buttons" type="HBoxContainer" parent="Control/MultiPanel/VBox"]
+theme_override_constants/separation = 8
+
+[node name="HostButton" type="Button" parent="Control/MultiPanel/VBox/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "127.0.0.1"
-text = "127.0.0.1"
+custom_minimum_size = Vector2(0, 40)
+text = "ホスト"
 
-[node name="ConnectButton" type="Button" parent="CenterContainer/VBox"]
+[node name="ConnectButton" type="Button" parent="Control/MultiPanel/VBox/Buttons"]
 layout_mode = 2
-text = "接続"
-visible = false
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(0, 40)
+text = "参加"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/VBox"]
+[node name="BackButton" type="Button" parent="Control/MultiPanel/VBox"]
 layout_mode = 2
-text = "終了"
+custom_minimum_size = Vector2(0, 36)
+text = "戻る"
 
-[node name="StatusLabel" type="Label" parent="CenterContainer/VBox"]
+[node name="StatusLabel" type="Label" parent="Control/MultiPanel/VBox"]
 layout_mode = 2
 text = ""
 horizontal_alignment = 1
-modulate = Color(1, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 13
+
+[node name="SettingsPanel" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220
+offset_top = -195
+offset_right = 220
+offset_bottom = 195
+visible = false
+
+[node name="VBox" type="VBoxContainer" parent="Control/SettingsPanel"]
+theme_override_constants/separation = 10
+
+[node name="PanelTitle" type="Label" parent="Control/SettingsPanel/VBox"]
+layout_mode = 2
+text = "設定"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.92, 0.88, 0.78, 1)
+
+[node name="MasterLabel" type="Label" parent="Control/SettingsPanel/VBox"]
+layout_mode = 2
+text = "マスター音量"
+
+[node name="MasterSlider" type="HSlider" parent="Control/SettingsPanel/VBox"]
+layout_mode = 2
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MusicLabel" type="Label" parent="Control/SettingsPanel/VBox"]
+layout_mode = 2
+text = "BGM 音量"
+
+[node name="MusicSlider" type="HSlider" parent="Control/SettingsPanel/VBox"]
+layout_mode = 2
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+value = 0.8
+
+[node name="SFXLabel" type="Label" parent="Control/SettingsPanel/VBox"]
+layout_mode = 2
+text = "SE 音量"
+
+[node name="SFXSlider" type="HSlider" parent="Control/SettingsPanel/VBox"]
+layout_mode = 2
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="BackButton" type="Button" parent="Control/SettingsPanel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 40)
+text = "適用して閉じる"
